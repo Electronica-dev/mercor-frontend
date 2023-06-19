@@ -7,7 +7,7 @@ const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;
 
   const { source, destination } = result;
-
+  console.log('result', result);
 
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
@@ -99,8 +99,10 @@ export default function List({ cardList }) {
                       </button>
                     </div>
                     <div className={`border-[1px] ${column.lineColour} my-4`}></div>
-                    <div className='flex flex-col overflow-y-auto [&>*]:mb-4' {...provided.droppableProps}
-                    ref={provided.innerRef}>
+                    <div className='flex flex-col overflow-y-auto [&>*]:mb-4 min-h-full'
+                      {...provided.droppableProps}
+                      ref={provided.innerRef}
+                    >
                     {column.items.map((item, index) => {
                       return (
                         <Draggable key={item.id} draggableId={item.id} index={index}>
