@@ -99,7 +99,7 @@ export default function List({ cardList }) {
                       </button>
                     </div>
                     <div className={`border-[1px] ${column.lineColour} my-4`}></div>
-                    <div className='flex flex-col overflow-y-auto [&>*]:mb-4 min-h-full'
+                    <div className='flex flex-col overflow-y-auto [&>*]:mb-4 min-h-[35vh]'
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                     >
