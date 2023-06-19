@@ -11,10 +11,16 @@ export default function Topbar() {
         />
         <input type="text" className={`rounded-[0.25rem] w-full h-[30px] text-sm pl-8 pr-8 bg-[#F5F5F5]`} placeholder='Search for anything...'/>
       </div>
-      <div className='flex flex-row [&>img]:px-3'>
-        <img src="calendar_main.svg" alt="calendar" srcset="" />
-        <img src="message-question.svg" alt="messages" srcset="" />
-        <img src="notification.svg" alt="notifications" />
+      <div className='flex flex-row [&>button]:mx-3'>
+        <button>
+          <img src="calendar_main.svg" alt="calendar" />
+        </button>
+        <button>
+          <img src="message-question.svg" alt="messages" />
+        </button>
+        <button>
+          <img src="notification.svg" alt="notifications" />
+        </button>
       </div>
       <div className='flex flex-row [&>div]:px-3'>
         <div className='flex flex-col'>
@@ -25,7 +31,7 @@ export default function Topbar() {
           <img className="w-[38px] h-[38px] rounded-full" src="anima_agarwal.png" alt="anima agarwal" />
         </div>
         <button>
-          <img src="arrow-down.svg" alt="" srcset="" />
+          <img src="arrow-down.svg" alt="arrow-down" />
         </button>
       </div>
     </div>

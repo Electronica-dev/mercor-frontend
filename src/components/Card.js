@@ -1,14 +1,14 @@
-export default function Card({ importance, title, textDescription, imageDescription, comments, files, assignedTo }) {
+export default function Card({ importance, completed, title, textDescription, imageDescription, comments, files, assignedTo }) {
   return (
     <div className='rounded-2xl bg-white p-4'>
       <div className='flex flex-row text-center align-middle'>
-        {importance === 'low' && <div className='rounded-md text-[#D58D49] text-[12px] bg-[#DFA874] bg-opacity-[20%] w-min px-1 py-0.5'>
+        {completed === 'false' && importance === 'low' && <div className='rounded-md text-[#D58D49] text-[12px] bg-[#DFA874] bg-opacity-[20%] w-min px-1 py-0.5'>
           Low
         </div>}
-        {importance === 'high' && <div className='rounded-md text-[#D8727D] text-[12px] bg-[#D8727D] bg-opacity-[10%] w-min px-1 py-0.5'>
+        {completed === 'false' && importance === 'high' && <div className='rounded-md text-[#D8727D] text-[12px] bg-[#D8727D] bg-opacity-[10%] w-min px-1 py-0.5'>
           High
         </div>}
-        {importance === 'completed' && <div className='rounded-md text-[#68B266] text-[12px] bg-[#83C29D] bg-opacity-[20%] w-min px-1 py-0.5'>
+        {completed === 'true' && <div className='rounded-md text-[#68B266] text-[12px] bg-[#83C29D] bg-opacity-[20%] w-min px-1 py-0.5'>
           Completed
         </div>}
         <div className='ml-auto'>
@@ -20,9 +20,27 @@ export default function Card({ importance, title, textDescription, imageDescript
       <div className='font-semibold text-[18px]'>
         {title}
       </div>
-      {textDescription && <div className='text-[12px] text-[#787486]'>
-        {textDescription}
-      </div>}
+      {
+        textDescription &&
+        <div className='text-[12px] text-[#787486]'>
+          {textDescription}
+        </div>
+      }
+      {
+        imageDescription.length !== 0 &&
+        <div className="flex justify-between">
+          {
+            imageDescription.map(element => {
+              return (
+                <div key={element}>
+                  <img src={element} alt="" className="max-w-[95%]"/>
+                </div>
+              )
+            })
+          }
+        </div>
+
+      }
       <div className='py-2'></div>
       <div className='flex items-center'>
         <div className='flex -space-x-2 overflow-hidden [&>div]:ring-1 [&>div]:ring-white'>
