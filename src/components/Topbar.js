@@ -1,6 +1,10 @@
 export default function Topbar() {
   return (
-    <div id='topbar' className='h-14 flex flex-row mx-8 items-center gap-x-6'>
+    <div id='topbar' className='h-14 flex mx-8 items-center gap-x-6'>
+      <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="md:hidden p-2 rotate-180 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span className="sr-only">Open sidebar</span>
+          <img src="collapse.svg" alt="" />
+      </button>
       <div className='relative w-[30%] mr-auto'>
         <img
           src="/search.svg"
@@ -22,12 +26,12 @@ export default function Topbar() {
           <img src="notification.svg" alt="notifications" />
         </button>
       </div>
-      <div className='flex flex-row [&>div]:px-3'>
+      <div className='flex flex-row [&>div]:px-3 max-md:[&>div]:px-1 items-center'>
         <div className='flex flex-col'>
           <div className='text-[#0D062D]'>Anima Agarwal</div>
-          <div className='text-[#787486] text-[14px]'>U.P, India</div>
+          <div className='max-lg:invisible max-lg:h-0 visible text-[#787486] text-[14px]'>U.P, India</div>
         </div>
-        <div>
+        <div className="shrink-0">
           <img className="w-[38px] h-[38px] rounded-full" src="anima_agarwal.png" alt="anima agarwal" />
         </div>
         <button>

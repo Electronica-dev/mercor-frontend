@@ -50,7 +50,7 @@ const onDragEnd = (result, columns, setColumns) => {
   }
 }
 
-export default function List({ cardList }) {
+export default function List() {
 
   const columnsFromBackend =
   {
@@ -83,13 +83,13 @@ export default function List({ cardList }) {
             <Droppable droppableId={id} key={id}>
               {(provided, snapshot) => {
                 return (
-                  <div className='flex flex-col h-[40vh] xl:h-[55vh] 2xl:h-[60vh] w-[32.5%] bg-[#F5F5F5] p-4'>
+                  <div className='flex flex-col h-[45vh] xl:h-[55vh] 2xl:h-[60vh] w-[32.5%] bg-[#F5F5F5] p-4'>
                     <div className='flex flex-row items-center'>
-                      <span className={`rounded-full ${column.colour} w-2 h-2 mr-2`}></span>
+                      <span className={`rounded-full ${column.colour} w-2 h-2 mr-2 shrink-0`}></span>
                       <div className='mr-4'>
                         {column.name}
                       </div>
-                      <div className='rounded-full w-[20px] h-[20px] bg-[#E0E0E0] mr-auto'>
+                      <div className='rounded-full w-[20px] h-[20px] bg-[#E0E0E0] mr-auto shrink-0'>
                         <div className='text-center align-middle leading-[20px] text-[#625F6D]'>
                           {column.items.length}
                         </div>
@@ -99,7 +99,7 @@ export default function List({ cardList }) {
                       </button>
                     </div>
                     <div className={`border-[1px] ${column.lineColour} my-4`}></div>
-                    <div className='flex flex-col overflow-y-auto [&>*]:mb-4 min-h-[35vh]'
+                    <div className='flex flex-col overflow-y-auto [&>*]:mb-4 min-h-[30vh]'
                       {...provided.droppableProps}
                       ref={provided.innerRef}
                     >

@@ -43,12 +43,13 @@ export default function Card({ importance, completed, title, textDescription, im
       }
       <div className='py-2'></div>
       <div className='flex items-center'>
-        <div className='flex -space-x-2 overflow-hidden [&>div]:ring-1 [&>div]:ring-white'>
+        <div className='flex -space-x-2 overflow-hidden [&>div]:ring-1 [&>div]:ring-white shrink-0'>
           {
             assignedTo.map((x) => {
               return (
                 <img
-                  className="w-[24px] h-[24px] rounded-full"
+                  className="w-[24px] h-[24px] rounded-full max-xl:w-0 max-xl:invisible"
+                  key={x.src}
                   src={x.src}
                   alt={x.alt}
                 />
@@ -56,18 +57,21 @@ export default function Card({ importance, completed, title, textDescription, im
             })
           }
         </div>
+        <div className="max-xl:visible max-xl:w-[24px] invisible w-[0px] h-[24px] rounded-full bg-[#F4D7DA] text-[#D25B68] text-center text-xs align-middle leading-[24px] shrink-0">{assignedTo.length}</div>
         <div className='ml-auto'></div>
         <div className='flex text-[#787486]'>
           <img className='px-1' src="comment-card.svg" alt="comments" />
-          <div className='text-[12px]'>
-            {comments == null ? 0: comments} comments
+          <div className='text-[12px] flex items-center'>
+            {comments == null ? 0: comments}
+            <div className="max-xl:w-0 max-xl:invisible">&nbsp;comments</div>
           </div>
         </div>
         <div className='mx-1'></div>
         <div className='flex text-[#787486]'>
           <img className='px-1' src="attachment-card.svg" alt="attachments" />
-          <div className='text-[12px]'>
-            {files == null ? 0: files} files
+          <div className='text-[12px] flex items-center'>
+            {files == null ? 0: files}
+            <div className="max-xl:w-0 max-xl:invisible">&nbsp;files</div>
           </div>
         </div>
       </div>

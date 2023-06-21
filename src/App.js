@@ -2,22 +2,23 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import List from './components/List';
+import { Modal } from 'flowbite';
 
 function App() {
   return (
     <div className="h-full font-[inter]">
       <div className='flex h-full flex-row overflow-hidden'>
-        <div className='basis-1/5 flex flex-col grow'>
+        <div className='flex flex-col grow'>
           <Sidebar />
         </div>
-        <div className='border-[0.5px] border-[#DBDBDB]'></div>
-        <div className='basis-4/5 max-h-full'>
+        <div className='border-[0.5px] -mr-64 ml-64 border-[#DBDBDB] max-md:invisible max-md:w-0 max-md:h-0'></div>
+        <div className='max-h-full md:ml-64'>
           <Topbar />
           <div className='border-[0.5px] border-[#DBDBDB]'></div>
           <div className='p-8'>
             <div className='flex flex-row'>
               <div className='flex flex-row mr-auto'>
-                <div className='text-[46px] font-semibold pr-4'>
+                <div className='max-sm:text-[28px] max-lg:text-[32px] text-[46px] font-semibold pr-4'>
                   Mobile App
                 </div>
                 <button>
@@ -35,13 +36,14 @@ function App() {
                 <div className='text-[#5030E5] mx-2'>
                   Invite
                 </div>
-                <div className='flex -space-x-2 overflow-hidden [&>div]:ring-1 [&>div]:ring-white'>
+                <div className='md:visible max-md:w-0 invisible flex -space-x-2 overflow-hidden [&>div]:ring-1 [&>div]:ring-white'>
                   <img className="w-[38px] h-[38px] rounded-full" src="1guy.png" alt="anima agarwal" />
                   <img className="w-[38px] h-[38px] rounded-full" src="2girl.png" alt="anima agarwal" />
                   <img className="w-[38px] h-[38px] rounded-full" src="3guy.png" alt="anima agarwal" />
                   <img className="w-[38px] h-[38px] rounded-full" src="4guy.png" alt="anima agarwal" />
-                  <div className="w-[38px] h-[38px] rounded-full bg-[#F4D7DA] text-[#D25B68] text-center align-middle leading-[38px]">+2</div>
+                  <div className="w-[38px] h-[38px] rounded-full bg-[#F4D7DA] text-[#D25B68] text-center align-middle leading-[38px] shrink-0">+2</div>
                 </div>
+                <div className="max-md:visible max-md:w-[38px] invisible w-[0px] h-[38px] rounded-full bg-[#F4D7DA] text-[#D25B68] text-center align-middle leading-[38px] shrink-0">6</div>
               </div>
             </div>
             <div className='my-8'></div>
